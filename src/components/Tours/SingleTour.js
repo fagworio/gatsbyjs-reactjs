@@ -8,13 +8,13 @@ import PropTypes from 'prop-types'
 const SingleTour = ({tour}) => {
     console.log(tour);
     const {name, price, country, days, slug, images } = tour
-    const feturedImage = images[0].fluid
+    const featuredImage = images[0].fluid
 
     return (
         <article className={styles.tour}>
           <div className={styles.imgContainer}>
               <Image 
-                fluid={feturedImage} 
+                fluid={featuredImage} 
                 className={styles.img} 
                 alt={name}
                 />

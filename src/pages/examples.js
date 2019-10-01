@@ -1,39 +1,39 @@
 import React from 'react'
-import HeaderHooks from '../examples/Header-Hooks'
+import HeaderHook from '../examples/Header-Hooks'
 import HeaderStatic from '../examples/Header-Static'
-import Layout from '../components/Layout'
 import { graphql } from 'gatsby'
+import Layout from '../components/layout'
+const examples = props => {
+  const { name, age } = props.data.site.siteMetadata.person
 
-const examples = (props) => {
-   const { name, age } = props.data.site.siteMetadata.person
-    
-    return (
-        <Layout>
-        <div>
-            Examples page
-            <HeaderHooks />
-            <HeaderStatic />
-            <div>
-                This is our person:
-                <h3>{name} {age}</h3>
-            </div>
-        </div>
-        </Layout>
-    )
+  return (
+    <Layout>
+      examples page
+      <HeaderHook />
+      <HeaderStatic />
+      <div>
+        this is our person
+        <h4>name :{name}</h4>
+        <h4>age :{age}</h4>
+      </div>
+    </Layout>
+  )
 }
+
 export const getData = graphql`
-query {
+  query {
     site {
-    siteMetadata{
-        siteTitle:title
+      siteMetadata {
+        siteTitle: title
         description
         author
-        person:data {
-            name
-            age
+        person: data {
+          age
+          name
         }
+      }
     }
-    }
-}
+  }
 `
+
 export default examples

@@ -7,7 +7,7 @@ import PropTypes from 'prop-types'
 
 const SingleTour = ({tour}) => {
     console.log(tour);
-    const {name, price, country, days, slug, images } = tour
+    const { name, price, country, days, slug, images } = tour
     const featuredImage = images[0].fluid
 
     return (
